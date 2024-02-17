@@ -1,0 +1,33 @@
+@import "vendor/reset";
+@import "_vars";
+@import "_fonts";
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.667vw;
+	height: 100%;
+
+	&._lock {
+		overflow: hidden;
+		
+	}
+
+	
+}
+
+/* Blocks */
+@import "blocks/container";
+@import "blocks/header";
+@import "blocks/menu-categories";
+
+@import "blocks/catalog/catalog";
