@@ -19,10 +19,49 @@ body {
 
 	&._lock {
 		overflow: hidden;
-		
 	}
 
-	
+	.rating {
+		display: flex;
+		justify-content: center;
+		gap: 8px;
+
+		&__star {
+			// cursor: pointer;
+
+			&_full {
+				display: none;
+			}
+
+			&_half-filled {
+				display: none;
+			}
+		}
+		&__wrap-star {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&.filled {
+				.rating__star {
+					display: none;
+					&_full {
+						display: block;
+					}
+				}
+			}
+
+			&.half-filled {
+				.rating__star {
+					display: none;
+					&_half-filled {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
 }
 
 /* Blocks */
@@ -30,4 +69,6 @@ body {
 @import "blocks/header";
 @import "blocks/menu-categories";
 
-@import "blocks/catalog/catalog";
+@import "blocks/catalog-categories/catalog";
+@import "blocks/catalog-products/catalog";
+@import "blocks/cart-empty/cart-content";
