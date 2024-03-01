@@ -111,6 +111,139 @@ window.addEventListener('load', function () {
 			}
 		});
 	});
+
+
+	productPromoSectionInit() 
+	productDescriptionSectionInit() 
 });
 
 
+function productPromoSectionInit() {
+	if (!document.querySelector(".section-product-promo")) {
+		return
+	}
+	if ($(".promo__slider-thumb")) {
+		let promoThumb = new Swiper(".promo__slider-thumb", {
+			speed: 1000,
+			slidesPerView: 5,
+			spaceBetween: 20,
+			direction: 'vertical',
+			autoHeight: true,
+
+			navigation: {
+				nextEl: ".promo__thumb-next",
+				prevEl: ".promo__thumb-prev",
+			},
+		});
+
+		new Swiper(".promo__slider", {
+			speed: 1000,
+			slidesPerView: 1,
+			spaceBetween: 10,
+			effect: "fade",
+
+			thumbs: {
+				swiper: promoThumb,
+			},
+
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					navigation: {
+						nextEl: ".promo .slider-button_next",
+						prevEl: ".promo .slider-button_prev",
+					},
+					pagination: {
+						el: '.promo .pagination',
+						clickable: true,
+					},
+				},
+				768: {
+					navigation: false,
+					pagination: false,
+				}
+			},
+		});
+	}
+
+}
+
+function productDescriptionSectionInit() {
+	if (!document.querySelector(".section-description-product")) {
+		return
+	}
+
+	$('.description__tab-title').on('click', function () {
+		$('.description__tab-title').removeClass('active')
+		$(this).addClass('active')
+		$('.description__content-item').removeClass('active')
+
+		if ($(this).hasClass('tab-description')) {
+			$('.description__content-description').addClass('active')
+		}
+		if ($(this).hasClass('tab-characteristics')) {
+			$('.description__content-characteristic').addClass('active')
+		}
+
+		if ($(this).hasClass('tab-feedbacks')) {
+			$('.description__content-feedbacks').addClass('active')
+		}
+	});
+
+
+	$('.feedbacks__item-reply-button').on("click", function (e) {
+		if ($(this).closest('.feedbacks__item-reply').hasClass('open-form')) {
+			$(this).closest('.feedbacks__item-reply').removeClass('open-form')
+		} else {
+			$(this).closest('.feedbacks__item-reply').addClass('open-form')
+		}
+	});
+	$('.feedbacks__item-reply-form_one-level .feedbacks__item-reply-form-button-cancel').on("click", function (e) {
+		$(this).closest('.feedbacks__item-reply').removeClass('open-form')	
+	});
+
+
+
+	$('.feedbacks__item-answer .feedbacks__item-answer-button').on("click", function (e) {
+		if ($(this).closest('.feedbacks__item-answer').hasClass('open-form')) {
+			$(this).closest('.feedbacks__item-answer').removeClass('open-form')
+		} else {
+			$(this).closest('.feedbacks__item-answer').addClass('open-form')
+		}
+	});
+	$('.feedbacks__item-answers .feedbacks__item-reply-form-button-cancel').on("click", function (e) {
+		$(this).closest('.feedbacks__item-answer').removeClass('open-form')
+	});
+
+
+	$('.feedbacks__item-reply-button-answers').on("click", function (e) {
+		$(this).closest('.feedbacks__item-reply').toggleClass('close-answers')
+		$(this).toggleClass('close-answers')
+	});
+
+	if ($(window).width() < 768) {
+		$('.feedbacks__item-reply-button-answers').closest('.feedbacks__item-reply').toggleClass('close-answers')
+		$('.feedbacks__item-reply-button-answers').toggleClass('close-answers')
+	}
+
+	$('.feedbacks__item-more-button').on("click", function (e) {
+		$(this).closest('.feedbacks__item').addClass('visible-more')
+	});
+
+	$('.feedbacks__wrap-rating-mobile svg').on("click", function (e) {
+		$(this).closest('.feedbacks__item').removeClass('visible-more')
+	});
+	
+
+
+	$(".feedbacks__linear-rating-item").each(function() {
+		var score = parseFloat($(this).data("score"));
+		var percentage = (score / 5) * 100;
+		$(this).find(".feedbacks__linear-rating span").css('width', percentage + "%")
+	});
+	
+	if ($('.feedbacks__sorting-selector')) {
+		$('.feedbacks__sorting-selector').niceSelect()
+	}
+
+}

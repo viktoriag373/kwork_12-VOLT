@@ -2,6 +2,8 @@
 @import "_vars";
 @import "_fonts";
 
+@import "config/mixins/_border-dotted";
+
 * {
 	box-sizing: border-box;
 }
@@ -68,7 +70,10 @@ body {
 @import "blocks/container";
 @import "blocks/header";
 @import "blocks/menu-categories";
+@import "blocks/feedbacks";
 
 @import "blocks/catalog-categories/catalog";
 @import "blocks/catalog-products/catalog";
 @import "blocks/cart-empty/cart-content";
+@import "blocks/product/promo";
+@import "blocks/product/description";
