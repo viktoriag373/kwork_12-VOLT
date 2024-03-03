@@ -79,7 +79,6 @@
 	}
 
 	&__content-feedbacks {
-
 		@media (max-width: 768px) {
 			flex-direction: column;
 
@@ -122,7 +121,6 @@
 			grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
 		}
 
-
 		@media (min-width: 768px) {
 			// .uk-grid>* {
 			// 	padding-left: 10px;
@@ -131,13 +129,13 @@
 			// 	padding-left: -10px;
 			// }
 		}
-		.uk-grid>* {
+		.uk-grid > * {
 			// padding-left: 10px;
 		}
 		.uk-grid {
 			// padding-left: -10px;
 		}
-		.uk-grid+.uk-grid {
+		.uk-grid + .uk-grid {
 			margin-top: 0;
 		}
 	}
@@ -148,10 +146,7 @@
 		justify-content: space-between;
 		align-items: flex-end;
 		@media (max-width: 768px) {
-			
 		}
-
-
 	}
 
 	&__characteristics-item-title {
@@ -188,7 +183,6 @@
 		@media (max-width: 768px) {
 			white-space: nowrap;
 			// margin-left: 20px;
-
 		}
 	}
 
@@ -209,20 +203,106 @@
 	&__feedbacks-wrap-rating-product {
 		min-width: 230px; //временно
 		width: 31%;
-		height: 100px;
-		border-radius: 5px;
-		background: linear-gradient(180deg, #ffca00 0%, #ffb017 100%);
-		box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
+		// height: 100px;
+		// border-radius: 5px;
+		// background: linear-gradient(180deg, #ffca00 0%, #ffb017 100%);
+		// box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
 		@media (max-width: 950px) {
 			display: none;
 		}
 		&_mobile {
 			display: none;
 			@media (max-width: 950px) {
-				display: block;
+				display: flex;
+				flex-wrap: wrap;
+				width: 100%;
+				gap: 15px;
 				margin-bottom: 20px;
 			}
 		}
+	}
+
+	&__rating-product-value {
+		color: #000;
+		text-align: center;
+		font-family: "Montserrat";
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: 0.96px;
+		@media (max-width: 480px) {
+			font-size: 24px;
+		}
+	}
+
+	&__rating-product-wrap-stars {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		@media (max-width: 950px) {
+			gap: 15px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__rating-product-stars {
+	}
+
+	&__rating-product-feedbacks-value {
+		color: #818181;
+		text-align: right;
+		font-family: "Roboto";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 135%; /* 21.6px */
+		letter-spacing: 0.48px;
+		@media (max-width: 480px) {
+			font-size: 14px;
+		}
+	}
+
+	&__rating-product-button-write-feedback {
+		border-radius: 5px;
+		background: linear-gradient(180deg, #ffca00 0%, #ffb017 100%);
+		box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
+		width: 100%;
+		padding: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		font-family: "Montserrat";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		margin-bottom: 20px;
+		max-width: 285px;
+		@media (max-width: 950px) {
+			margin-bottom: 0;
+		}
+
+		&:hover {
+			color: #fff;
+		}
+	}
+
+	&__rating-product-wrap-count {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	&__rating-product-count-group {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__rating-product-count-stars {
 	}
 
 	&__feedbacks-gallary {
@@ -259,7 +339,6 @@
 	}
 
 	&__feedbacks-gallary-slider {
-
 		.swiper-slide {
 			height: 70px;
 			width: 70px;

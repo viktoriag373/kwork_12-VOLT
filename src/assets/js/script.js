@@ -112,6 +112,82 @@ window.addEventListener('load', function () {
 		});
 	});
 
+	if ($('.feedback__parameter-wrap-stars')) {
+		$('.feedback__parameter-wrap-stars').click(function(){  
+			$(this).parent().attr('data-rating',$(this).data('star'));
+		});
+	}
+
+	if ($('.feedback__product-time-selector')) {
+		$('.feedback__product-time-selector').niceSelect()
+	}
+
+
+	let dropZone = $('.feedback__wrap-input-file');
+	$('.feedback__input-file').focus(function () {
+		$('label').addClass('focus');
+	})
+		.focusout(function () {
+			$('label').removeClass('focus');
+		});
+	dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function () {
+		return false;
+	});
+	dropZone.on('dragover dragenter', function () {
+		dropZone.addClass('dragover');
+	});
+	dropZone.on('dragleave', function (e) {
+		let dx = e.pageX - dropZone.offset().left;
+		let dy = e.pageY - dropZone.offset().top;
+		if ((dx < 0) || (dx > dropZone.width()) || (dy < 0) || (dy > dropZone.height())) {
+			dropZone.removeClass('dragover');
+		}
+	});
+	dropZone.on('drop', function (e) {
+		dropZone.removeClass('dragover');
+		let files = e.originalEvent.dataTransfer.files;
+		addFiles(files);
+	});
+	$('.feedback__input-file').change(function () {
+		let files = this.files;//список файлов
+		addFiles(files);
+	});
+
+	let labelTextDefault = $('.feedback__label-file-text').html()
+	$('.feedback__input-file-clear').on('click', function (e) {
+		clearFiles($(this))
+		return false
+	});
+
+	function clearFiles(e) {
+		e.closest('.feedback__wrap-input-file').find('.feedback__label-file-text').html(labelTextDefault);
+		$('.feedback__wrap-input-file').removeClass('added');
+	}
+
+	function addFiles(files) {
+		$('.feedback__input-file').closest('.feedback__wrap-input-file').find('.feedback__label-file-text').html(files[0].name);
+		$('.feedback__wrap-input-file').addClass('added');
+		let fileSize = files[0].size; // Размер файла в байтах
+		// Функция для конвертации размера файла
+		function convertFileSize(size) {
+			let suffix = ''
+			if (size < 1024) {
+				suffix = " B";
+			} else if (size < 1048576) {
+				size /= 1024;
+				suffix = " KB";
+			} else if (size < 1073741824) {
+				size /= 1048576;
+				suffix = " MB";
+			} else {
+				size /= 1073741824;
+				suffix = " GB";
+			}
+			return size.toFixed(1) + suffix
+		}
+		let formattedSize = convertFileSize(fileSize);
+		$('.feedback__file-size').html(formattedSize)
+	}
 
 	productPromoSectionInit() 
 	productDescriptionSectionInit() 
