@@ -189,6 +189,14 @@ window.addEventListener('load', function () {
 		$('.feedback__file-size').html(formattedSize)
 	}
 
+	$('.button-remove').on("click", function (e) {
+		$(this).closest('.input-container').find('.quantityInput').val(parseInt($(this).closest('.input-container').find('.quantityInput').val()) - 1)
+    })
+
+	$('.button-add').on("click", function (e) {
+		$(this).closest('.input-container').find('.quantityInput').val(parseInt($(this).closest('.input-container').find('.quantityInput').val()) + 1)
+    })
+
 	productPromoSectionInit() 
 	productDescriptionSectionInit() 
 });
