@@ -19,7 +19,6 @@
 		margin-top: 30px;
 		@media (max-width: 768px) {
 			width: 100%;
-
 		}
 		p {
 			color: rgb(0, 0, 0);
@@ -200,7 +199,7 @@
 		}
 		@media (max-width: 560px) {
 			box-shadow: none;
-			padding: 0 15px 0 0 ;
+			padding: 0 15px 0 0;
 		}
 
 		p {
@@ -216,21 +215,76 @@
 	}
 
 	&__total-info {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 	}
 
 	&__total-info-item {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 	}
 
 	&__total-info-item-title {
+		color: #4d4d4d;
+		font-family: "Roboto";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: 0.48px;
 	}
 
 	&__total-info-item-change-btn {
+		color: #1e50a0;
+		font-family: "Roboto";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: 0.48px;
+		text-decoration: none;
 	}
 
 	&__total-info-item-value {
+		color: #4d4d4d;
+		font-family: "Roboto";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: 0.48px;
+		display: flex;
 	}
 
 	&__total-input-promocode {
+		border-radius: 10px;
+		border: 1px solid #c3c3c3;
+		padding: 8px;
+		color: rgba(33, 33, 33, 0.4);
+		font-family: "Montserrat";
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: 0.36px;
+		margin-bottom: 25px;
+		width: 100%;
+		margin-top: 20px;
+	}
+
+	&__product-value {
+		display: flex;
+		justify-content: space-between;
+		color: #000;
+		font-family: "Roboto";
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: 0.42px;
+		margin-bottom: 10px;
 	}
 
 	&__price {

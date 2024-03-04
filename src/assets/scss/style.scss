@@ -63,7 +63,110 @@ body {
 			}
 		}
 	}
+	input[type="checkbox"],
+	input[type="radio"] {
+		display: none;
+	}
 
+	input[type="checkbox"] + label {
+		padding-left: 20px;
+		position: relative;
+		cursor: pointer;
+		color: #4d4d4d;
+		font-family: "Montserrat";
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: 0.36px;
+		color: #4d4d4d;
+		min-height: 15px;
+		display: inline-flex;
+		align-items: center;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+	input[type="checkbox"] + label a {
+		color: #707374;
+	}
+	input[type="checkbox"] + label a:hover {
+		text-decoration: underline;
+	}
+
+	input[type="checkbox"]:checked + label {
+		font-weight: 500;
+	}
+
+	input[type="checkbox"] + label:before {
+		content: "";
+		display: inline-block;
+		border: 0.5px solid #4d4d4d;
+		border-radius: 2px;
+		margin: 0;
+		width: 15px;
+		height: 15px;
+		vertical-align: middle;
+		transition: color ease 0.3s;
+		left: 0;
+		top: 0;
+		position: absolute;
+	}
+
+	input[type="checkbox"]:checked + label:before {
+		background: url(../images/icon/check-mark-icon.svg) 50% 50% no-repeat;
+		border: none;
+	}
+
+	
+
+	input[type="radio"] + label {
+		padding-left: 20px;
+		position: relative;
+		cursor: pointer;
+		color: #4d4d4d;
+		font-family: "Montserrat";
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		letter-spacing: 0.36px;
+		color: #4d4d4d;
+		min-height: 15px;
+		display: inline-flex;
+		align-items: center;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+	input[type="radio"] + label a {
+		color: #707374;
+	}
+	input[type="radio"] + label a:hover {
+		text-decoration: underline;
+	}
+
+	input[type="radio"]:checked + label {
+		font-weight: 500;
+	}
+
+	input[type="radio"] + label:before {
+		content: "";
+		display: inline-block;
+		border: 0.5px solid #4d4d4d;
+		border-radius: 2px;
+		margin: 0;
+		width: 15px;
+		height: 15px;
+		vertical-align: middle;
+		transition: color ease 0.3s;
+		left: 0;
+		top: 0;
+		position: absolute;
+	}
+
+	input[type="radio"]:checked + label:before {
+		background: url(../images/icon/check-mark-icon.svg) 50% 50% no-repeat;
+		border: none;
+	}
 }
 
 /* Blocks */

@@ -26,10 +26,15 @@
 				<div class="cart__wrap-mass-selection">
 					<div class="cart__mass-selection">
 						<div class="cart__mass-selection-checkbox">
-							<label for class="cart__mass-selection-label-checkbox">
+							<!-- <label for class="cart__mass-selection-label-checkbox">
 								<input type="checkbox" class="cart__mass-selection-input-checkbox">
 								Выделить все
-							</label>
+							</label> -->
+
+							<input type="checkbox" id="all" name="all"
+								class="cart__mass-selection-input-checkbox">
+							<label for="all" class="cart__mass-selection-label-checkbox">Выделить
+								все</label>
 						</div>
 						<button class="cart__mass-selection-remove-btn">
 							<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
@@ -72,11 +77,13 @@
 				<div class="cart__items">
 					<div class="cart__item">
 						<div class="cart__item-wrap-input">
-							<input type="text" class="cart__item-input-checkbox">
+							<input type="checkbox" name="choice" id="choice"
+								class="cart__item-input-checkbox">
+							<label for="choice" class="cart__product-item-label-checkbox"></label>
 						</div>
 						<div class="cart__item-product">
 							<div class="cart__item-preview">
-								<img src="assets/images/img/product-slide-1.jpg" alt
+								<img src="assets/images/img/catalog-product-img-1.jpg" alt
 									class="cart__item-img">
 								<span class="cart__product-tag">
 									Официальный дилер
@@ -108,17 +115,17 @@
 									</span>
 								</button>
 								<button class="cart__item-remove-btn">
-									<span>
-										<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											viewBox="0 0 25 25" fill="none">
-											<path
-												d="M12.9707 2.9707C10.9929 2.9707 9.0595 3.55719 7.41501 4.65601C5.77051 5.75482 4.48879 7.31661 3.73191 9.14387C2.97504 10.9711 2.777 12.9818 3.16285 14.9216C3.54871 16.8614 4.50111 18.6432 5.89964 20.0418C7.29816 21.4403 9.08 22.3927 11.0198 22.7786C12.9596 23.1644 14.9703 22.9664 16.7975 22.2095C18.6248 21.4526 20.1866 20.1709 21.2854 18.5264C22.3842 16.8819 22.9707 14.9485 22.9707 12.9707C22.9707 11.6575 22.712 10.3571 22.2095 9.14387C21.707 7.93061 20.9704 6.82822 20.0418 5.89964C19.1132 4.97105 18.0108 4.23445 16.7975 3.73191C15.5843 3.22936 14.2839 2.9707 12.9707 2.9707ZM12.9707 20.9707C11.3885 20.9707 9.84174 20.5015 8.52615 19.6225C7.21055 18.7434 6.18517 17.494 5.57967 16.0322C4.97417 14.5704 4.81574 12.9618 5.12443 11.41C5.43311 9.85813 6.19503 8.43267 7.31385 7.31385C8.43267 6.19503 9.85814 5.4331 11.41 5.12442C12.9618 4.81574 14.5704 4.97417 16.0322 5.57967C17.494 6.18517 18.7434 7.21055 19.6225 8.52614C20.5015 9.84173 20.9707 11.3885 20.9707 12.9707C20.9707 15.0924 20.1279 17.1273 18.6276 18.6276C17.1273 20.1278 15.0924 20.9707 12.9707 20.9707Z"
-												fill="#818181" />
-											<path
-												d="M15.7991 14.385L14.3849 12.9708L15.7991 11.5566C15.9867 11.3691 16.092 11.1147 16.092 10.8495C16.092 10.5843 15.9867 10.3299 15.7991 10.1424C15.6116 9.95486 15.3572 9.8495 15.092 9.8495C14.8268 9.8495 14.5725 9.95486 14.3849 10.1424L12.9707 11.5566L11.5565 10.1424C11.369 9.95486 11.1146 9.8495 10.8494 9.8495C10.5842 9.8495 10.3298 9.95486 10.1423 10.1424C9.95474 10.3299 9.84938 10.5843 9.84938 10.8495C9.84938 11.1147 9.95474 11.3691 10.1423 11.5566L11.5565 12.9708L10.1423 14.385C9.95474 14.5726 9.84938 14.8269 9.84938 15.0921C9.84938 15.3574 9.95474 15.6117 10.1423 15.7992C10.3298 15.9868 10.5842 16.0921 10.8494 16.0921C11.1146 16.0921 11.369 15.9868 11.5565 15.7992L12.9707 14.385L14.3849 15.7992C14.5725 15.9868 14.8268 16.0921 15.092 16.0921C15.3572 16.0921 15.6116 15.9868 15.7991 15.7992C15.9867 15.6117 16.092 15.3574 16.092 15.0921C16.092 14.8269 15.9867 14.5726 15.7991 14.385Z"
-												fill="#818181" />
-										</svg>
-									</span>
+
+									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+										viewBox="0 0 25 25" fill="none">
+										<path
+											d="M12.9707 2.9707C10.9929 2.9707 9.0595 3.55719 7.41501 4.65601C5.77051 5.75482 4.48879 7.31661 3.73191 9.14387C2.97504 10.9711 2.777 12.9818 3.16285 14.9216C3.54871 16.8614 4.50111 18.6432 5.89964 20.0418C7.29816 21.4403 9.08 22.3927 11.0198 22.7786C12.9596 23.1644 14.9703 22.9664 16.7975 22.2095C18.6248 21.4526 20.1866 20.1709 21.2854 18.5264C22.3842 16.8819 22.9707 14.9485 22.9707 12.9707C22.9707 11.6575 22.712 10.3571 22.2095 9.14387C21.707 7.93061 20.9704 6.82822 20.0418 5.89964C19.1132 4.97105 18.0108 4.23445 16.7975 3.73191C15.5843 3.22936 14.2839 2.9707 12.9707 2.9707ZM12.9707 20.9707C11.3885 20.9707 9.84174 20.5015 8.52615 19.6225C7.21055 18.7434 6.18517 17.494 5.57967 16.0322C4.97417 14.5704 4.81574 12.9618 5.12443 11.41C5.43311 9.85813 6.19503 8.43267 7.31385 7.31385C8.43267 6.19503 9.85814 5.4331 11.41 5.12442C12.9618 4.81574 14.5704 4.97417 16.0322 5.57967C17.494 6.18517 18.7434 7.21055 19.6225 8.52614C20.5015 9.84173 20.9707 11.3885 20.9707 12.9707C20.9707 15.0924 20.1279 17.1273 18.6276 18.6276C17.1273 20.1278 15.0924 20.9707 12.9707 20.9707Z"
+											fill="#818181" />
+										<path
+											d="M15.7991 14.385L14.3849 12.9708L15.7991 11.5566C15.9867 11.3691 16.092 11.1147 16.092 10.8495C16.092 10.5843 15.9867 10.3299 15.7991 10.1424C15.6116 9.95486 15.3572 9.8495 15.092 9.8495C14.8268 9.8495 14.5725 9.95486 14.3849 10.1424L12.9707 11.5566L11.5565 10.1424C11.369 9.95486 11.1146 9.8495 10.8494 9.8495C10.5842 9.8495 10.3298 9.95486 10.1423 10.1424C9.95474 10.3299 9.84938 10.5843 9.84938 10.8495C9.84938 11.1147 9.95474 11.3691 10.1423 11.5566L11.5565 12.9708L10.1423 14.385C9.95474 14.5726 9.84938 14.8269 9.84938 15.0921C9.84938 15.3574 9.95474 15.6117 10.1423 15.7992C10.3298 15.9868 10.5842 16.0921 10.8494 16.0921C11.1146 16.0921 11.369 15.9868 11.5565 15.7992L12.9707 14.385L14.3849 15.7992C14.5725 15.9868 14.8268 16.0921 15.092 16.0921C15.3572 16.0921 15.6116 15.9868 15.7991 15.7992C15.9867 15.6117 16.092 15.3574 16.092 15.0921C16.092 14.8269 15.9867 14.5726 15.7991 14.385Z"
+											fill="#818181" />
+									</svg>
+
 								</button>
 							</div>
 							<div class="cart__item-price">
@@ -136,64 +143,77 @@
 									<button type="button"
 										class="products__item-form-button products__item-form-button_add button-add">+</button>
 								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cart__item">
+						<div class="cart__item-wrap-input">
+							<input type="checkbox" name="choice" id="choice"
+								class="cart__item-input-checkbox">
+							<label for="choice" class="cart__product-item-label-checkbox"></label>
+						</div>
+						<div class="cart__item-product">
+							<div class="cart__item-preview">
+								<img src="assets/images/img/catalog-product-img-1.jpg" alt
+									class="cart__item-img">
+								<span class="cart__product-tag">
+									Официальный дилер
+								</span>
+							</div>
+							<div class="cart__item-data">
+								<span class="cart__item-article">
+									Артикул: 1212101-001-01-999
+								</span>
+								<span class="cart__item-title">
+									Ravenol ATF MERCON V 1л для АКПП FORD П/син гидравлическая жидкость
+								</span>
+								<span class="cart__item-available">
+									Можно забрать <b>сегодня</b>
+								</span>
+							</div>
+						</div>
 
-								<style>
-									/* &__item-form-wrap-input-value {
-										display: flex;
-										align-items: center;
-										justify-content: center;
-										max-width: 160px;
-										margin-left: auto;
-										margin-right: auto;
-										margin-bottom: 10px;
-									}
+						<div class="cart__item-block-right">
+							<div class="cart__item-favorite-and-remove">
+								<button class="cart__item-favorite-btn">
+									<span>
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="16"
+											viewBox="0 0 18 16" fill="none">
+											<path
+												d="M7.78438 15.0504L6.2275 13.7185C4.72253 12.4237 3.28687 11.059 1.92585 9.62957C0.705037 8.42731 0.0163293 6.83157 0 5.16737C0 3.84398 0.476962 2.73267 1.41289 1.84193C1.87393 1.40253 2.42564 1.05689 3.03394 0.82635C3.64223 0.595815 4.29421 0.48528 4.9496 0.501571C5.72797 0.49783 6.49713 0.660244 7.19942 0.976635C7.90137 1.299 8.50432 1.74013 8.99928 2.28306C9.4934 1.73144 10.1071 1.28598 10.7991 0.976635C11.5013 0.659964 12.2706 0.497536 13.049 0.501571C14.4618 0.501571 15.6407 0.951185 16.5767 1.84193C17.0417 2.27555 17.4077 2.79424 17.6522 3.36612C17.8967 3.938 18.0146 4.55097 17.9986 5.16737C17.9986 6.79616 17.3686 8.28922 16.0817 9.64654C14.7194 11.0861 13.2712 12.4513 11.7441 13.7355L10.2142 15.0504C9.87221 15.3473 9.46724 15.5 8.99928 15.5C8.53132 15.5 8.12635 15.3473 7.78438 15.0504Z"
+												fill="#CBD2DE" />
+										</svg>
+									</span>
+								</button>
+								<button class="cart__item-remove-btn">
 
-									&__item-form-button {
-										border: 1px solid #cdcdcd;
-										background: #f2f3f2;
-										min-width: 32px;
-										min-height: 32px;
-										width: 32px;
-										height: 32px;
-										display: flex;
-										align-items: center;
-										justify-content: center;
-										color: #000;
-										font-family: "Inter", sans-serif;
-										font-size: 18px;
-										font-style: normal;
-										font-weight: 700;
-										line-height: 100%;
-										&_remove {
-											border-radius: 5px 0px 0px 5px;
-										}
+									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+										viewBox="0 0 25 25" fill="none">
+										<path
+											d="M12.9707 2.9707C10.9929 2.9707 9.0595 3.55719 7.41501 4.65601C5.77051 5.75482 4.48879 7.31661 3.73191 9.14387C2.97504 10.9711 2.777 12.9818 3.16285 14.9216C3.54871 16.8614 4.50111 18.6432 5.89964 20.0418C7.29816 21.4403 9.08 22.3927 11.0198 22.7786C12.9596 23.1644 14.9703 22.9664 16.7975 22.2095C18.6248 21.4526 20.1866 20.1709 21.2854 18.5264C22.3842 16.8819 22.9707 14.9485 22.9707 12.9707C22.9707 11.6575 22.712 10.3571 22.2095 9.14387C21.707 7.93061 20.9704 6.82822 20.0418 5.89964C19.1132 4.97105 18.0108 4.23445 16.7975 3.73191C15.5843 3.22936 14.2839 2.9707 12.9707 2.9707ZM12.9707 20.9707C11.3885 20.9707 9.84174 20.5015 8.52615 19.6225C7.21055 18.7434 6.18517 17.494 5.57967 16.0322C4.97417 14.5704 4.81574 12.9618 5.12443 11.41C5.43311 9.85813 6.19503 8.43267 7.31385 7.31385C8.43267 6.19503 9.85814 5.4331 11.41 5.12442C12.9618 4.81574 14.5704 4.97417 16.0322 5.57967C17.494 6.18517 18.7434 7.21055 19.6225 8.52614C20.5015 9.84173 20.9707 11.3885 20.9707 12.9707C20.9707 15.0924 20.1279 17.1273 18.6276 18.6276C17.1273 20.1278 15.0924 20.9707 12.9707 20.9707Z"
+											fill="#818181" />
+										<path
+											d="M15.7991 14.385L14.3849 12.9708L15.7991 11.5566C15.9867 11.3691 16.092 11.1147 16.092 10.8495C16.092 10.5843 15.9867 10.3299 15.7991 10.1424C15.6116 9.95486 15.3572 9.8495 15.092 9.8495C14.8268 9.8495 14.5725 9.95486 14.3849 10.1424L12.9707 11.5566L11.5565 10.1424C11.369 9.95486 11.1146 9.8495 10.8494 9.8495C10.5842 9.8495 10.3298 9.95486 10.1423 10.1424C9.95474 10.3299 9.84938 10.5843 9.84938 10.8495C9.84938 11.1147 9.95474 11.3691 10.1423 11.5566L11.5565 12.9708L10.1423 14.385C9.95474 14.5726 9.84938 14.8269 9.84938 15.0921C9.84938 15.3574 9.95474 15.6117 10.1423 15.7992C10.3298 15.9868 10.5842 16.0921 10.8494 16.0921C11.1146 16.0921 11.369 15.9868 11.5565 15.7992L12.9707 14.385L14.3849 15.7992C14.5725 15.9868 14.8268 16.0921 15.092 16.0921C15.3572 16.0921 15.6116 15.9868 15.7991 15.7992C15.9867 15.6117 16.092 15.3574 16.092 15.0921C16.092 14.8269 15.9867 14.5726 15.7991 14.385Z"
+											fill="#818181" />
+									</svg>
 
-										&_add {
-											border-radius: 0px 5px 5px 0px;
-										}
-									}
-
-									&__item-form-input-value {
-										color: #000;
-										text-align: center;
-										font-family: "Inter", sans-serif;
-										font-size: 14px;
-										font-style: normal;
-										font-weight: 700;
-										line-height: 120%; 
-										border: none;
-										width: 100%;
-										padding: 5px;
-
-										-moz-appearance: textfield;
-
-										&::-webkit-inner-spin-button,
-										&::-webkit-outer-spin-button {
-											-webkit-appearance: none;
-											margin: 0;
-										}
-									} */
-								</style>
+								</button>
+							</div>
+							<div class="cart__item-price">
+								<span>
+									490₽
+								</span>
+							</div>
+							<div class="cart__item-wrap-count">
+								<div class="products__item-form-wrap-input-value input-container">
+									<button type="button"
+										class="products__item-form-button products__item-form-button_remove button-remove">-</button>
+									<input type="number"
+										class="products__item-form-input-value quantityInput" name="quantity"
+										value="1" step="0.1" min="1" />
+									<button type="button"
+										class="products__item-form-button products__item-form-button_add button-add">+</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -210,7 +230,7 @@
 						<input type="tel" class="cart__login-input" placeholder="Телефон*"
 							required>
 						<button class="cart__login-button">
-
+							Получить код
 						</button>
 					</div>
 				</form>
@@ -321,7 +341,7 @@
 									</a>
 									<iframe
 										src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=44.604759%2C48.799671&mode=poi&poi%5Bpoint%5D=44.604753%2C48.799536&utm_source=ntp_chrome&z=17.36"
-										width="560" height="400" frameborder="1" allowfullscreen="true"
+										width height frameborder="1" allowfullscreen="true"
 										style="position:relative;">
 									</iframe>
 								</div>
@@ -344,7 +364,7 @@
 									</form>
 
 									<form action class="cart__receiving-address-form">
-										<div class="cart__receiving-address-erap-inputs">
+										<div class="cart__receiving-address-wrap-inputs">
 											<input type="text" class="cart__receiving-address-input"
 												placeholder="Подъезд*" required>
 											<input type="text" class="cart__receiving-address-input"
@@ -353,8 +373,8 @@
 												placeholder="Кв./ офис*" required>
 											<textarea name id cols="30" rows="10"
 												class="cart__receiving-address-textarea"
-												placeholder="Комментарий"> 
-											</textarea>
+												placeholder="Комментарий"></textarea>
+
 										</div>
 
 										<div class="cart__receiving-deliveru-wrap-button">
@@ -367,10 +387,6 @@
 										</div>
 									</form>
 								</div>
-
-								<button class="cart__receiving-tab-content-info-btn">
-									Изменить магазин
-								</button>
 							</div>
 
 							<div class="cart__receiving-tab-content-wrap-map">
@@ -408,6 +424,9 @@
 										<button class="btn" type="submit"></button>
 									</form>
 									<div class="cart__receiving-choice-company">
+										<span class="cart__receiving-tab-content-info-title">
+											Выберите компанию
+										</span>
 										<div class="cart__receiving-choice-company-wrap-title">
 											<span class="cart__receiving-choice-company-title">
 												Способ доставки
@@ -418,13 +437,18 @@
 										</div>
 										<div class="cart__receiving-choice-company-item">
 											<div class="cart__receiving-choice-item-wrap-input">
-												<label for="" class="cart__receiving-choice-company-label-radio">
-													<input type="radio" class="cart__receiving-choice-company-input-radio" name="choice-company">
+												<label for class="cart__receiving-choice-company-label-radio">
+													<!-- <input type="radio"
+														class="cart__receiving-choice-company-input-radio"
+														name="choice-company"> -->
+													<input type="radio" id="company1" name="transport-company">
+													<label for="company1"></label>
 													Почта России
 												</label>
 											</div>
 											<div class="cart__receiving-choice-item-info">
-												<img src="assets/images/img/delivery-logo-1.jpg" alt="" class="cart__receiving-choice-item-logo">
+												<img src="assets/images/img/delivery-logo-1.jpg" alt
+													class="cart__receiving-choice-item-logo">
 												<span class="cart__receiving-choice-item-time-and-price">
 													509 р. / Уточнит менеджер при подтверждении заказа
 												</span>
@@ -432,8 +456,12 @@
 										</div>
 										<div class="cart__receiving-choice-company-item">
 											<div class="cart__receiving-choice-item-wrap-input">
-												<label for="" class="cart__receiving-choice-company-label-radio">
-													<input type="radio" class="cart__receiving-choice-company-input-radio" name="choice-company">
+												<label for class="cart__receiving-choice-company-label-radio">
+													<!-- <input type="radio"
+														class="cart__receiving-choice-company-input-radio"
+														name="choice-company"> -->
+													<input type="radio" id="company2" name="transport-company">
+													<label for="company2"></label>
 													CDEK ПВЗ
 												</label>
 												<span class="cart__receiving-choice-item-descr">
@@ -441,7 +469,8 @@
 												</span>
 											</div>
 											<div class="cart__receiving-choice-item-info">
-												<img src="assets/images/img/delivery-logo-1.jpg" alt="" class="cart__receiving-choice-item-logo">
+												<img src="assets/images/img/delivery-logo-2.jpg" alt
+													class="cart__receiving-choice-item-logo">
 												<span class="cart__receiving-choice-item-time-and-price">
 													509 р. / 3-4 дн.
 												</span>
@@ -449,56 +478,163 @@
 										</div>
 									</div>
 								</div>
-								<div class="cart__receiving-tab-content-wrap-map">
-									<div style="position:relative;overflow:hidden;">
-										<a
-											href="https://yandex.ru/maps/38/volgograd/?utm_medium=mapframe&utm_source=maps"
-											style="color:#eee;font-size:12px;position:absolute;top:0px;">Волгоград
-										</a>
-										<a
-											href="https://yandex.ru/maps/38/volgograd/house/ploshchad_dzerzhinskogo_1b/YE0YcAdkTkAPQFpifXt4eHpkZQ==/?indoorLevel=1&ll=44.604759%2C48.799671&utm_medium=mapframe&utm_source=maps&z=17.36"
-											style="color:#eee;font-size:12px;position:absolute;top:14px;">Площадь
-											Дзержинского, 1Б — Яндекс Карты
-										</a>
-										<iframe
-											src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=44.604759%2C48.799671&mode=poi&poi%5Bpoint%5D=44.604753%2C48.799536&utm_source=ntp_chrome&z=17.36"
-											width="560" height="400" frameborder="1" allowfullscreen="true"
-											style="position:relative;">
-										</iframe>
-									</div>
-									<span class="cart__receiving-tab-content-info-text-price">
-										Стоимость доставки может быть изменена в случае смены расценок
-										транспортных компаний или при заказе дополнительных услуг (страховка,
-										паллетирование и др.). У некоторых транспортных компаний доставка
-										оплачивается частично при получении товара. Подробности вам сообщит
-										менеджер. Сроки доставки указаны на основе данных транспортных
-										компаний и в зависимости от даты оплаты они могут сдвигаться.
-									</span>
-								</div>
-
 							</div>
 							<div class="cart__receiving-tab-content-wrap-address-map">
-								<span class="cart__receiving-tab-content-info-title">
-									Адреса пунктов выдачи
-								</span>
+
 								<div style="position:relative;overflow:hidden;">
 									<a
-										href="https://yandex.ru/maps/38/volgograd/search/CDEK/?utm_medium=mapframe&utm_source=maps"
-										style="color:#eee;font-size:12px;position:absolute;top:0px;">CDEK в
-										Волгограде
+										href="https://yandex.ru/maps/38/volgograd/?utm_medium=mapframe&utm_source=maps"
+										style="color:#eee;font-size:12px;position:absolute;top:0px;">Волгоград
 									</a>
 									<a
-										href="https://yandex.ru/maps/38/volgograd/?utm_medium=mapframe&utm_source=maps"
-										style="color:#eee;font-size:12px;position:absolute;top:14px;">Волгоград
+										href="https://yandex.ru/maps/38/volgograd/house/ploshchad_dzerzhinskogo_1b/YE0YcAdkTkAPQFpifXt4eHpkZQ==/?indoorLevel=1&ll=44.604759%2C48.799671&utm_medium=mapframe&utm_source=maps&z=17.36"
+										style="color:#eee;font-size:12px;position:absolute;top:14px;">Площадь
+										Дзержинского, 1Б — Яндекс Карты
 									</a>
 									<iframe
-										src="https://yandex.ru/map-widget/v1/?display-text=CDEK&ll=44.604759%2C48.799671&mode=search&sll=44.604759%2C48.799671&sspn=0.014980%2C0.005418&text=%7B%22text%22%3A%22CDEK%22%2C%22what%22%3A%5B%7B%22attr_name%22%3A%22chain_id%22%2C%22attr_values%22%3A%5B%22272889558%22%5D%7D%5D%7D&utm_source=ntp_chrome&z=14.36"
-										width="560" height="400" frameborder="1" allowfullscreen="true"
+										src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=44.604759%2C48.799671&mode=poi&poi%5Bpoint%5D=44.604753%2C48.799536&utm_source=ntp_chrome&z=17.36"
+										width height frameborder="1" allowfullscreen="true"
 										style="position:relative;">
 									</iframe>
 								</div>
+								<span class="cart__receiving-tab-content-info-text-price">
+									Стоимость доставки может быть изменена в случае смены расценок
+									транспортных компаний или при заказе дополнительных услуг (страховка,
+									паллетирование и др.). У некоторых транспортных компаний доставка
+									оплачивается частично при получении товара. Подробности вам сообщит
+									менеджер. Сроки доставки указаны на основе данных транспортных
+									компаний и в зависимости от даты оплаты они могут сдвигаться.
+								</span>
+							</div>
+						</div>
+						<div class="cart__receiving-tab-content-wrapper-map">
+							<span class="cart__receiving-tab-content-info-title">
+								Адреса пунктов выдачи
+							</span>
+							<div style="position:relative;overflow:hidden;">
+								<a
+									href="https://yandex.ru/maps/38/volgograd/search/CDEK/?utm_medium=mapframe&utm_source=maps"
+									style="color:#eee;font-size:12px;position:absolute;top:0px;">CDEK в
+									Волгограде
+								</a>
+								<a
+									href="https://yandex.ru/maps/38/volgograd/?utm_medium=mapframe&utm_source=maps"
+									style="color:#eee;font-size:12px;position:absolute;top:14px;">Волгоград
+								</a>
+								<iframe
+									src="https://yandex.ru/map-widget/v1/?display-text=CDEK&ll=44.604759%2C48.799671&mode=search&sll=44.604759%2C48.799671&sspn=0.014980%2C0.005418&text=%7B%22text%22%3A%22CDEK%22%2C%22what%22%3A%5B%7B%22attr_name%22%3A%22chain_id%22%2C%22attr_values%22%3A%5B%22272889558%22%5D%7D%5D%7D&utm_source=ntp_chrome&z=14.36"
+									width height frameborder="1" allowfullscreen="true"
+									style="position:relative;">
+								</iframe>
 							</div>
 
+						</div>
+					</div>
+				</div>
+
+				<div class="cart__wrap-date">
+					<h3 class="cart__content-title">
+						Когда вам будет удобнее забрать заказ?
+					</h3>
+
+					<div class="cart__date-items">
+						<div class="cart__date-item">
+							<div class="cart__date-item-wrap-input">
+								<input type="radio" id="date" name="date">
+								<label for="date"></label>
+							</div>
+							<div class="cart__date-item-data">
+								<div class="cart__date-day">
+									Понедельник, 
+									<b>12 февраля</b>
+								</div>
+							</div>
+						</div>
+						<div class="cart__date-item">
+							<div class="cart__date-item-wrap-input">
+								<input type="radio" id="date1" name="date">
+								<label for="date1"></label>
+							</div>
+							<div class="cart__date-item-data">
+								<div class="cart__date-day">
+									Вторник, 
+									<b>13 февраля</b>
+								</div>
+							</div>
+						</div>
+						<div class="cart__date-item">
+							<div class="cart__date-item-wrap-input">
+								<input type="radio" id="date2" name="date">
+								<label for="date2"></label>
+							</div>
+							<div class="cart__date-item-data">
+								<div class="cart__date-day">
+									Среда, 
+									<b>14 февраля</b>
+								</div>
+							</div>
+						</div>
+						<div class="cart__date-item">
+							<div class="cart__date-item-wrap-input">
+								<input type="radio" id="date3" name="date">
+								<label for="date3"></label>
+							</div>
+							<div class="cart__date-item-data">
+								<div class="cart__date-day">
+									Четверг, 
+									<b>15 февраля</b>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cart__wrap-payment">
+					<h3 class="cart__content-title">
+						Выберите способ оплаты
+					</h3>
+
+					<div class="cart__payment-items">
+						<div class="cart__payment-item">
+							<div class="cart__payment-item-wrap-input">
+								<input type="radio" id="payment" name="payment">
+								<label for="payment"></label>
+							</div>
+							<div class="cart__payment-item-value">
+								<div class="cart__payment-item-value-text">
+									Оплата по QR-коду
+								</div>
+								<span class="cart__payment-item-description">
+									Начисление и списание бонусов СберСпасибо недоступно
+								</span>
+							</div>
+						</div>
+						<div class="cart__payment-item">
+							<div class="cart__date-item-wrap-input">
+								<input type="radio" id="payment1" name="payment">
+								<label for="payment1"></label>
+							</div>
+							<div class="cart__payment-item-value">
+								<div class="cart__payment-item-value-text">
+									Онлайн-оплата картой
+								</div>
+								<span class="cart__payment-item-description">
+									Начисление и списание бонусов СберСпасибо недоступно
+								</span>
+							</div>
+						</div>
+						<div class="cart__payment-item">
+							<div class="cart__payment-item-wrap-input">
+								<input type="radio" id="payment2" name="payment">
+								<label for="payment2"></label>
+							</div>
+							<div class="cart__payment-item-value">
+								<div class="cart__payment-item-value-text">
+									Наличными или картой
+								</div>
+								<span class="cart__payment-item-description">
+									При получении
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -528,9 +664,9 @@
 							Покупатель
 							<a href="#" class="cart-content__total-info-item-change-btn">Изменить</a>
 						</span>
-						<span class="cart-content__total-info-item-value">
-							
-						</span>
+						<!-- <span class="cart-content__total-info-item-value">
+
+						</span> -->
 					</div>
 					<div class="cart-content__total-info-item">
 						<span class="cart-content__total-info-item-title">
@@ -542,7 +678,13 @@
 						</span>
 					</div>
 
-					<input type="text" class="cart-content__total-input-promocode" placeholder="Введите промокод">
+					<input type="text" class="cart-content__total-input-promocode"
+						placeholder="Введите промокод">
+				</div>
+
+				<div class="cart-content__product-value">
+					<span>2 товара • <b>5,05 кг</b></span>
+					<span>15 271 р.</span>
 				</div>
 				<span class="cart-content__price">
 					Итого: <b>0руб</b>.

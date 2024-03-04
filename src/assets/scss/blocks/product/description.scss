@@ -159,17 +159,17 @@
 		letter-spacing: 0.48px;
 	}
 
-	.dotted {
-		flex-grow: 1;
-		margin-left: 10px;
-		margin-bottom: 3px;
-		margin-right: 2px;
-		@include dottedBorder($color: #818181, $size: 1.5px);
-		@media (max-width: 768px) {
-			height: 2px;
-			display: none;
-		}
-	}
+	// .dotted {
+	// 	flex-grow: 1;
+	// 	margin-left: 10px;
+	// 	margin-bottom: 3px;
+	// 	margin-right: 2px;
+	// 	// @include dottedBorder($color: #818181, $size: 1.5px);
+	// 	@media (max-width: 768px) {
+	// 		height: 2px;
+	// 		display: none;
+	// 	}
+	// }
 
 	&__characteristics-item-value {
 		color: #000;
