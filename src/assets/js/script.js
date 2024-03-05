@@ -199,6 +199,7 @@ window.addEventListener('load', function () {
 
 	productPromoSectionInit() 
 	productDescriptionSectionInit() 
+	cartPageInit() 
 });
 
 
@@ -429,4 +430,42 @@ function productDescriptionSectionInit() {
 	// 	}
 	// 	input[0].files = dt.files;  
 	// }
+}
+
+function cartPageInit() {
+	if (!document.querySelector(".page-cart")) {
+		return
+	}
+
+	$('input[name="all"]').on('change', function() {
+        if ($(this).is(':checked')) {
+            $('.cart__item').find('input[type="checkbox"]').prop('checked', true);
+        } else {
+            $('.cart__item').find('input[type="checkbox"]').prop('checked', false);
+        }
+    });
+
+	$('.cart__receiving-tab').on('click', function () {
+		$('.cart__receiving-tab').removeClass('active')
+		$(this).addClass('active')
+	})
+
+
+	$('.cart__receiving-tab').on('click', function () {
+		$('.cart__receiving-tab').removeClass('active')
+		$(this).addClass('active')
+		$('.cart__receiving-tab-content-item').removeClass('active')
+
+
+		if ($(this).hasClass('cart-tab-pickup')) {
+			$('.tab-content-pickup').addClass('active')
+		}
+		if ($(this).hasClass('cart-tab-courier')) {
+			$('.tab-content-courier').addClass('active')
+		}
+		if ($(this).hasClass('cart-tab-transport-company')) {
+			$('.tab-content-transport-company').addClass('active')
+		}
+		
+	});
 }
