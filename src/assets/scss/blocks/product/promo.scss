@@ -2,7 +2,6 @@
 	padding-top: 30px;
 
 	&__wrap {
-
 	}
 
 	&__title {
@@ -39,7 +38,6 @@
 			display: none;
 			flex-wrap: wrap;
 			justify-content: space-between;
-			
 		}
 		@media (max-width: 560px) {
 			gap: 15px;
@@ -150,7 +148,7 @@
 	&__thumb-next {
 		cursor: pointer;
 		@media (max-width: 950px) {
-		display: none;
+			display: none;
 		}
 
 		&.swiper-button-disabled {
@@ -183,11 +181,11 @@
 			justify-content: center;
 			align-items: center;
 			width: 100px;
-		height: 100px;
-		@media (max-width: 1440px) {
-			width: 80px;
-			height: 80px;
-		}
+			height: 100px;
+			@media (max-width: 1440px) {
+				width: 80px;
+				height: 80px;
+			}
 		}
 		.swiper-slide-thumb-active {
 			border: 2px solid #c3c3c3;
@@ -238,9 +236,10 @@
 			max-width: 500px;
 			margin-left: auto;
 			margin-right: auto;
-			@media (max-width: 480px) {
-				height: 347px;
-			}
+		}
+		@media (max-width: 480px) {
+			height: 347px;
+			border: none;
 		}
 	}
 
@@ -269,6 +268,32 @@
 	&__slider {
 		width: 100%;
 		height: 100%;
+	}
+
+	&__product-pagination_mobile {
+		display: none;
+		position: absolute;
+		z-index: 105;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 5px;
+		bottom: 15px !important;
+		@media (max-width: 560px) {
+			display: flex;
+		}
+
+		.swiper-pagination-bullet {
+			width: 30px;
+			height: 6px;
+			border-radius: 10px !important;
+			opacity: 1;
+			background: #d9d9d9;
+		}
+		.swiper-pagination-bullet-active {
+			background: #ffb017;
+		}
 	}
 
 	&__wrap-img {
@@ -404,13 +429,13 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.10);
+			box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
 		}
 		&.active,
 		&:hover {
 			color: #000;
 			svg path {
-				fill: #FFB017;
+				fill: #ffb017;
 			}
 		}
 		svg path {
@@ -441,13 +466,13 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.10);
+			box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
 		}
 		&.active,
 		&:hover {
 			color: #000;
 			svg path {
-				fill: #FFB017;
+				fill: #ffb017;
 			}
 		}
 		svg path {
@@ -547,7 +572,7 @@
 	&__wrap-price {
 		// min-width: 390px;
 		width: 100%;
-			max-width: 390px;
+		max-width: 390px;
 		border-radius: 10px;
 		background: #fff;
 		padding: 30px 30px 40px 30px;
@@ -675,7 +700,6 @@
 
 		@media (max-width: 480px) {
 			width: 162px;
-
 		}
 
 		svg {

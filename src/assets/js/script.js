@@ -197,8 +197,11 @@ window.addEventListener('load', function () {
 		$(this).closest('.input-container').find('.quantityInput').val(parseInt($(this).closest('.input-container').find('.quantityInput').val()) + 1)
     })
 
+	
+
 	productPromoSectionInit() 
 	productDescriptionSectionInit() 
+	feedbackPageInit() 
 	cartPageInit() 
 });
 
@@ -240,6 +243,10 @@ function productPromoSectionInit() {
 			slidesPerView: 1,
 			spaceBetween: 10,
 			effect: "fade",
+			pagination: {
+				el: '.promo .pagination',
+				clickable: true,
+			},
 
 			thumbs: {
 				swiper: promoThumb,
@@ -248,14 +255,6 @@ function productPromoSectionInit() {
 			breakpoints: {
 				320: {
 					slidesPerView: 1,
-					navigation: {
-						nextEl: ".promo .slider-button_next",
-						prevEl: ".promo .slider-button_prev",
-					},
-					pagination: {
-						el: '.promo .pagination',
-						clickable: true,
-					},
 				},
 				768: {
 					navigation: false,
@@ -467,5 +466,31 @@ function cartPageInit() {
 			$('.tab-content-transport-company').addClass('active')
 		}
 		
+	});
+}
+
+function feedbackPageInit() {
+	if (!document.querySelector(".page-feedback")) {
+		return
+	}
+
+	new Swiper(".feedback__product-slider", {
+		speed: 1000,
+		slidesPerView: 1,
+		spaceBetween: 10,
+		pagination: {
+			el: '.feedback .pagination',
+			clickable: true,
+		},
+
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+				
+			},
+			560: {
+				pagination: false
+			}
+		},
 	});
 }
